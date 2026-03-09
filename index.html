@@ -6,7 +6,6 @@
     <title>Jessica Bosch | PhD | Data - Analysis - Visualization </title>
     <!-- Tailwind for utility classes, custom CSS for branding -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Mono&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -17,11 +16,10 @@
         <div class="text-sm font-bold tracking-wide">
             <span class="text-[#3E8B5F]">HOME</span>
         </div>
-        <nav class="space-x-8 hidden md:flex text-sm font-medium tracking-wide">
+        <nav class="space-x-8 md:flex text-sm font-medium tracking-wide">
             <a href="#portfolio" class="nav-link">PORTFOLIO</a>
-            <a href="#experience" class="nav-link">EXPERIENCE</a>
             <a href="#about" class="nav-link">ABOUT</a>
-            <a href="#contact" class="nav-link">CONTACT</a>
+            <a href="#connect" class="nav-link">CONNECT</a>
         </nav>
     </header>
 
@@ -38,32 +36,30 @@
                     Jessica Bosch
                 </h1>
 
-                <h2 class="text-2xl md:text-4xl font-semibold mb-8 text-[#82828b] h-12">
+                <h2 class="text-2xl md:text-4xl font-semibold mb-8 text-slate-500 h-12">
                     I am a <span id="scramble" class="scramble-text">Data Analyst</span>
                 </h2>
 
-                <p class="text-lg md:text-xl text-slate-400 leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0 font-light">
+                <p class="text-lg md:text-xl text-slate-400 leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0">
                     Specializing in the intersection of mathematical rigor and purpose-driven data storytelling. I transform complex datasets into clear, actionable insights for mission-oriented organizations.
                 </p>
 
                 <div class="flex flex-wrap justify-center lg:justify-start gap-4">
-                    <a href="https://public.tableau.com/app/profile/jessica.bosch" target="_blank" class="btn-primary px-10 py-4 rounded-full font-semibold shadow-lg shadow-green-900/20 active:scale-95 transition-all">
+                    <a href="https://public.tableau.com/app/profile/jessica.bosch" target="_blank" class="border btn-primary px-10 py-4 rounded-full font-semibold shadow-lg shadow-green-900/20 active:scale-95 transition-all">
                         Tableau Vizzes
                     </a>
-                    <a href="https://www.linkedin.com/in/JBosch88/" target="_blank" class="btn-primary px-10 py-4 rounded-full font-semibold shadow-lg shadow-green-900/20 active:scale-95 transition-all">
+                    <a href="https://www.linkedin.com/in/JBosch88/" target="_blank" class="border btn-primary px-10 py-4 rounded-full font-semibold shadow-lg shadow-green-900/20 active:scale-95 transition-all">
                         LinkedIn
                     </a>
                 </div>
             </div>
 
-            <!-- CREATIVE PHOTO SECTION -->
+            <!-- Profile Photo -->
             <div class="flex-shrink-0 fade-in order-1 lg:order-2" style="animation-delay: 0.4s;">
 
                 <div class="profile-wrapper">
                     <div class="orbit orbit-1"></div>
                     <div class="orbit orbit-2"></div>
-                    <div class="node node-1"></div>
-                    <div class="node node-2"></div>
 
                     <div class="profile-image-container">
                         <img src="./img/jb_profile_2000px.jpg"
@@ -78,16 +74,12 @@
 
     <!-- FOOTER -->
     <footer class="p-6 md:p-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 fade-in mt-auto z-20" style="animation-delay: 0.6s;">
-        <div class="text-slate-500 text-xs mono uppercase tracking-widest text-center md:text-left">
+        <div class="text-slate-500 text-xs uppercase tracking-widest text-center md:text-left">
             &copy; 2026 Jessica Bosch • PhD in Mathematics • Magdeburg, Germany
-        </div>
-        <div class="flex space-x-6 text-slate-400 text-sm mono">
-            <a href="https://github.com/jessi88/" target="_blank" class="hover:text-green-400 transition-colors">GITHUB</a>
-            <a href="mailto:jessica.bosch88@gmail.com" class="hover:text-green-400 transition-colors">EMAIL</a>
         </div>
     </footer>
 
-    <!-- External Script -->
+    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>

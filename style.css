@@ -1,23 +1,22 @@
 :root {
-  --brand-charcoal: #020617; /* Deeper slate for contrast */
-  --brand-accent: #3E8B5F;
+  --brand-charcoal: #020617;
+  --brand-accent: #3e8b5f;
   --brand-accent-glow: rgba(134, 239, 172, 0.3);
   --brand-text-dim: #94a3b8;
-  --brand-orange: #EF9164;
-  --brand-darkgreen: #1B4445;
-  --brand-light: #E7E3E2;
+  --brand-orange: #ef9164;
+  --brand-rose: #f3bcb4;
+  --brand-darkgreen: #1b4445;
+  --brand-blue: #609dab;
+  --brand-light: #e7e3e2;
 }
 
 body {
   font-family: "Inter", sans-serif;
-  background-color: var(--brand-charcoal);
   overflow-x: hidden;
+  color: var(--brand-charcoal);
 }
 
-.mono {
-  font-family: "Space Mono", monospace;
-}
-
+/* Dynamic Background */
 .hero-gradient {
   background:
     radial-gradient(
@@ -27,24 +26,30 @@ body {
     ),
     radial-gradient(
       circle at 80% 70%,
-      rgba(190, 242, 100, 0.05) 0%,
+      rgba(134, 239, 172, 0.05) 0%,
       transparent 50%
     );
   background-attachment: fixed;
 }
 
-.scramble-text {
-  color: var(--brand-accent);
-  text-shadow: 0 0 15px var(--brand-accent-glow);
+/* Subtle Fade In */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navigation */
 .nav-link {
   transition: color 0.3s ease;
   position: relative;
-  -webkit-transition: color 0.3s ease;
-  -moz-transition: color 0.3s ease;
-  -ms-transition: color 0.3s ease;
-  -o-transition: color 0.3s ease;
 }
 
 .nav-link:hover {
@@ -66,7 +71,19 @@ body {
   width: 100%;
 }
 
-/* --- CREATIVE PHOTO SECTION (RETAINED) --- */
+/* Text Scramble */
+.scramble-text {
+  color: var(--brand-accent);
+  text-shadow: 0 0 15px var(--brand-accent-glow);
+}
+
+/* Button */
+.btn-primary:hover {
+  color: var(--brand-accent);
+  box-shadow: 0 10px 20px -5px var(--brand-accent-glow);
+}
+
+/* Photo Section */
 .profile-wrapper {
   position: relative;
   display: flex;
@@ -81,6 +98,7 @@ body {
   border: 1px solid rgba(19, 121, 57, 0.15);
   border-radius: 50%;
   animation: rotate 20s linear infinite;
+  -webkit-animation: rotate 20s linear infinite;
 }
 
 .orbit-1 {
@@ -111,16 +129,7 @@ body {
   width: 240px;
   height: 240px;
   overflow: hidden;
-  background: linear-gradient(135deg, #064e3b, #020617);
-  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   animation: morph 8s ease-in-out infinite;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  box-shadow: 0 0 40px rgba(134, 239, 172, 0.15);
-  z-index: 2;
-  -webkit-transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  -moz-transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  -ms-transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  -o-transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 @keyframes morph {
@@ -140,51 +149,21 @@ body {
   height: 100%;
   object-fit: cover;
   filter: grayscale(100%) contrast(1.1);
-  transition: all 0.6s ease;
   transform: scale(1.1);
 }
 
-.profile-wrapper:hover .profile-image {
-  filter: grayscale(0%) contrast(1);
-  transform: scale(1);
-}
-
-.profile-wrapper:hover .profile-image-container {
-  border-radius: 2rem;
-  box-shadow: 0 0 60px rgba(134, 239, 172, 0.3);
-}
-
-.node {
+/* Particles.js Container */
+#particles-js {
   position: absolute;
-  width: 6px;
-  height: 6px;
-  background: var(--brand-accent);
-  border-radius: 50%;
-  box-shadow: 0 0 10px var(--brand-accent);
+  width: 100%;
+  height: 100%;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
 }
 
-.node-1 {
-  top: 10%;
-  right: 10%;
-}
-.node-2 {
-  bottom: 20%;
-  left: 5%;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.5);
-    opacity: 0.5;
-  }
-}
-
+/* Screen sizes */
 @media (min-width: 1024px) {
   .profile-wrapper {
     width: 400px;
@@ -194,30 +173,4 @@ body {
     width: 300px;
     height: 300px;
   }
-}
-
-/* --- UTILS --- */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ---- particles.js container ---- */
-
-#particles-js {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-image: url("");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
 }
